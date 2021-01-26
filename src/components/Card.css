@@ -1,0 +1,74 @@
+:root {
+  --Sporting: rgba(196, 196, 9, 0.3);
+  --Hound: rgb(240, 128, 48, 0.3);
+  --Working: rgb(104, 144, 240, 0.3);
+  --Terrier: rgb(120, 200, 80, 0.3);
+  --Toy: rgb(5, 5, 5, 0.3);
+  --Non-Sporting: rgba(115, 33, 136, 0.3);
+  --Herding: rgba(45, 60, 143, 0.3);
+  --Mixed: rgba(139, 89, 139, 0.3);
+}
+
+.card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+  justify-content: center;
+  height: 320px;
+  width: 150px;
+
+  border-radius: 15px;
+  margin: 10px;
+  box-shadow: 2px 2px 5px 5px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+
+  transition: all 0.5s;
+}
+
+.card:hover {
+  transform: scale(1.1);
+}
+
+.avatar img {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+}
+
+img {
+  object-fit: cover;
+}
+
+.content {
+  position: absolute;
+  top: 30px;
+}
+
+.breed,
+.group,
+.temperament {
+  margin: 10px;
+  font-weight: bold;
+}
+
+.breed {
+  background-color: rgba(0, 0, 0, 0.2);
+  display: inline-block;
+  border-radius: 10px;
+  padding: 5px 8px;
+  font-size: 12px;
+}
+
+.group {
+  letter-spacing: 1px;
+  font-size: 16px;
+}
+
+.group::first-letter {
+  text-transform: uppercase;
+}
+
+.temperament {
+  font-size: 11px;
+}
