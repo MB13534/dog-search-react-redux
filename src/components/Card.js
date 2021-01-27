@@ -1,3 +1,5 @@
+import React from "react";
+
 import "./Card.css";
 
 const Card = ({ id, imgUrl, breed, group, temperament }) => {
