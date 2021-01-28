@@ -1,4 +1,4 @@
-import { dogs } from "./api/dogs";
+import dogs from "./API/dogs";
 
 import {
   CHANGE_SEARCHFIELD,
@@ -24,7 +24,7 @@ const filterOriginalDogList = (dogList) => {
 //ACTION CREATOR TO UPDATE THE STATE OF THE LIST OF DOGS
 //this only runs once
 export const fetchDogs = (numberOfDogsToFetch) => async (dispatch) => {
-  console.log({ type: REQUEST_DOGS_PENDING });
+  dispatch({ type: REQUEST_DOGS_PENDING });
 
   try {
     //runs axios from /API/dogs.js
@@ -33,9 +33,9 @@ export const fetchDogs = (numberOfDogsToFetch) => async (dispatch) => {
     const { data: dogList } = response;
     //some of the dogs in the API do not have breed or breed_group so we must remove them from the list
     const filteredDogList = filterOriginalDogList(dogList);
-    console.log({ type: REQUEST_DOGS_SUCCESS, payload: filteredDogList });
+    dispatch({ type: REQUEST_DOGS_SUCCESS, payload: filteredDogList });
   } catch (error) {
-    console.log({ type: REQUEST_DOGS_FAILED, payload: error });
+    dispatch({ type: REQUEST_DOGS_FAILED, payload: error });
   }
 };
 
